@@ -1,5 +1,5 @@
 # mishotek-toolbox
-Collection for useful typescript utilities
+Collection for useful typescript/javascript utilities
 
 ## Storage
 ### PersistentDecoratorFactory
