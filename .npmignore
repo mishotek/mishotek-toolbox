@@ -1,0 +1,8 @@
+.idea
+test
+src
+coverage
+node_modules
+package-lock.json
+jest.config.js
+tsconfig.json
