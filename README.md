@@ -46,3 +46,64 @@ const languageService = LanguageService();
 // Stores 'FR' with key 'MY_BUCKET.language'
 languageService.language = 'FR';
 ```
+
+## HTTP
+### endpointDecoratorFactory
+Lets you elegantly configure your endpoints.
+
+Usage:
+```TypeScript
+const apiEndpoint = endpointDecoratorFactory('https://jsonplaceholder.typicode.com/');
+
+class Endpoints {
+
+  @apiEndpoint
+  static posts(): string {
+    return 'posts';
+  }
+
+  @apiEndpoint
+  static post(postId: string): string {
+    return `posts/${postId}`;
+  }
+  
+  // Some more endpoints...
+}
+
+// Get all posts
+// Endpoints.posts() will return https://jsonplaceholder.typicode.com/posts
+fetch(Endpoints.posts())
+  .then(() => { /* Do stuff... */ })
+
+// Get particular post
+// Endpoints.posts() will return https://jsonplaceholder.typicode.com/posts/123
+fetch(Endpoints.post('123'))
+  .then(() => { /* Do stuff... */ })
+```
+
+You could handle multiple APIs too:
+```TypeScript
+const jsonplaceholderEndpoint = endpointDecoratorFactory('https://jsonplaceholder.typicode.com/');
+const unsplashEndpoint = endpointDecoratorFactory('https://unsplash.com/');
+
+class Endpoints {
+
+  @jsonplaceholderEndpoint
+  static posts(): string {
+    return 'posts';
+  }
+
+  @jsonplaceholderEndpoint
+  static post(postId: string): string {
+    return `posts/${postId}`;
+  }
+  
+  @unsplashEndpoint
+  static image(imageId: string): string {
+    return `${imageId}`;
+  }
+  
+  // Some more endpoints...
+}
+
+```

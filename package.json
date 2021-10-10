@@ -1,7 +1,7 @@
 {
   "name": "mishotek-toolbox",
-  "version": "0.0.1",
-  "description": "Collection of useful typescriplt/javascript utilities",
+  "version": "1.0.0",
+  "description": "Collection of useful typescript/javascript utilities",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {

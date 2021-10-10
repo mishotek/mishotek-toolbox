@@ -1,5 +1,5 @@
-import { PersistentDecoratorFactory } from '../src/persistent.decorator'
-import { LocalStorageMock } from "./test-utils";
+import { PersistentDecoratorFactory } from '../src'
+import { LocalStorageMock } from './test-utils';
 
 describe('PersistentDecoratorFactory', () => {
   beforeAll(() => {

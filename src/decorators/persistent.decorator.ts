@@ -1,5 +1,5 @@
-export const PersistentDecoratorFactory = function (bucket = 'APP') {
-  return function (target: any, propertyKey: string): any {
+export function PersistentDecoratorFactory(bucket = 'APP') {
+  return function persistentDecorator(target: any, propertyKey: string): any {
     const localStorageKey = `${bucket}.${propertyKey}`;
 
     Object.defineProperty(target, propertyKey, {
