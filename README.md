@@ -1,5 +1,5 @@
 # mishotek-toolbox
-Collection for useful typescript utilities
+Collection for useful typescript/javascript utilities
 
 ## Storage
 ### PersistentDecoratorFactory
@@ -7,11 +7,11 @@ Lets you persist properties even after the page refresh. Ideal for storing setti
 
 Usage:
 ```TypeScript
-const persistence = PersistentDecoratorFactory();
+const persistent = PersistentDecoratorFactory();
 
 class LanguageService {
 
-  @persistence
+  @persistent
   language: string;
 
   // Some other code...
@@ -31,11 +31,11 @@ Now, when you set ```storage.language``` it will be stored in the localStorage a
 By default, localStorage key will be ```'APP.' + property name```. For example, in LanguageService case, ```language``` will be stored as ```APP.language```. However, you can change prefix, by passing custom bucket name to the PersistentDecoratorFactory:
 
 ```TypeScript
-const persistence = PersistentDecoratorFactory('MY_BUCKET');
+const persistent = PersistentDecoratorFactory('MY_BUCKET');
 
 class LanguageService {
 
-  @persistence
+  @persistent
   language: string;
 
   // Some other code...
