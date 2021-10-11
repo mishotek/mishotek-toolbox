@@ -1,5 +1,5 @@
 # mishotek-toolbox
-Collection for useful typescript/javascript utilities
+Collection of useful typescript/javascript utilities
 
 ## Storage
 ### PersistentDecoratorFactory
@@ -17,7 +17,7 @@ class LanguageService {
   // Some other code...
 }
 
-const languageService = LanguageService();
+const languageService = new LanguageService();
 
 // Stores 'FR' in the localStorage
 languageService.language = 'FR';
@@ -58,26 +58,26 @@ const apiEndpoint = endpointDecoratorFactory('https://jsonplaceholder.typicode.c
 class Endpoints {
 
   @apiEndpoint
-  static posts(): string {
-    return 'posts';
+  static users(): string {
+    return 'users';
   }
 
   @apiEndpoint
-  static post(postId: string): string {
-    return `posts/${postId}`;
+  static user(userId: string): string {
+    return `users/${userId}`;
   }
   
   // Some more endpoints...
 }
 
-// Get all posts
-// Endpoints.posts() will return https://jsonplaceholder.typicode.com/posts
-fetch(Endpoints.posts())
+// Get all users
+// Will make request to the https://jsonplaceholder.typicode.com/users
+fetch(Endpoints.users())
   .then(() => { /* Do stuff... */ })
 
-// Get particular post
-// Endpoints.posts() will return https://jsonplaceholder.typicode.com/posts/123
-fetch(Endpoints.post('123'))
+// Get particular user
+// Will make request to the https://jsonplaceholder.typicode.com/users/123
+fetch(Endpoints.user('123'))
   .then(() => { /* Do stuff... */ })
 ```
 
@@ -89,13 +89,13 @@ const unsplashEndpoint = endpointDecoratorFactory('https://unsplash.com/');
 class Endpoints {
 
   @jsonplaceholderEndpoint
-  static posts(): string {
-    return 'posts';
+  static users(): string {
+    return 'users';
   }
 
   @jsonplaceholderEndpoint
-  static post(postId: string): string {
-    return `posts/${postId}`;
+  static user(userId: string): string {
+    return `users/${userId}`;
   }
   
   @unsplashEndpoint
