@@ -2,7 +2,9 @@
 Collection of useful typescript/javascript utilities
 
 ## Install
+```
 npm i mishotek-toolbox
+```
 
 ## Storage
 ### PersistentDecoratorFactory
