@@ -1,6 +1,9 @@
 # mishotek-toolbox
 Collection of useful typescript/javascript utilities
 
+## Install
+npm i mishotek-toolbox
+
 ## Storage
 ### PersistentDecoratorFactory
 Lets you persist properties even after the page refresh. Ideal for storing settings and configs, like selected language.
